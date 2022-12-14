@@ -54,16 +54,42 @@ class PagesController extends Controller
         return back()->with('msj','Se registro con éxito...'); //Regresar con msj
     }
 
+    //////////////////// UPDATE ///////////////////////////////////
+    public function fnEstActualizar($id){                   //Paso 1
 
+        $xActAlumnos = Estudiante::findOrFail($id);
+        return view('Estudiante.pagActualizar', compact('xActAlumnos'));
+    }
 
+    //////////////////// DELETE /////////////////////////////////// 
+    public function fnEliminar($id){
+        $deleteAlumno = Estudiante::findOrFail($id);
+        $deleteAlumno->delete();
 
+        return back()->with('msj','Se elimino con éxito...');  //Regresar con msj
+    
+    }
+    public function fnUpdate(Request $request, $id){        //Paso 2
 
+        //return $request->all();         //Prueba de "token" y datos recibidos
 
+        $xUpdateAlumnos = Estudiante::findOrFail($id);
 
-
-
-
-
+        $xUpdateAlumnos->codEst = $request->codEst;
+        $xUpdateAlumnos->nomEst = $request->nomEst;
+        $xUpdateAlumnos->apeEst = $request->apeEst;
+        $xUpdateAlumnos->fnaEst = $request->fnaEst;
+        $xUpdateAlumnos->turMat = $request->turMat;
+        $xUpdateAlumnos->semMat = $request->semMat;
+        $xUpdateAlumnos->estMat = $request->estMat;
+        
+        $xUpdateAlumnos->save();
+        
+        //$xAlumnos = Estudiante1::all();                        //Datos de BD
+        //return view('pagLista', compact('xAlumnos'));          //Pasar a pagLista
+        return back()->with('msj','Se actualizó con éxito...');  //Regresar con msj
+    } 
+  
 
 
 

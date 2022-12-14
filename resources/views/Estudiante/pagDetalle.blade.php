@@ -11,9 +11,9 @@
     <p>Codigo:                               {{ $xDetAlumnos ->codEst}} </p>
     <p>Apellido y nombres:                   {{ $xDetAlumnos ->apeEst}}, {{ $xDetAlumnos ->nomEst}} </p>
     <p>Fecha de nacimiento:                  {{ $xDetAlumnos ->fnaEst}} </p>
-    <p>Turno:                                {{ $xDetAlumnos ->turEst}} </p>
-    <p>Semestre:                             {{ $xDetAlumnos ->semEst}} </p>
-    <p>Estado de matricula:                  {{ $xDetAlumnos ->estEst}} </p>
+    <p>Turno:                                {{ $xDetAlumnos ->turMat}} </p>
+    <p>Semestre:                             {{ $xDetAlumnos ->semMat}} </p>
+    <p>Estado de matricula:                  {{ $xDetAlumnos ->estMat}} </p>
 
 @endsection
 

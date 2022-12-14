@@ -23,3 +23,6 @@ Route::get('/galeria/{numero?}',[PagesController::class, 'fnGaleria'] ) ->  wher
 Route::get('/lista',[PagesController::class, 'fnLista'] )->name('xLista');
 
 Route::post('/', [PagesController::class, 'fnRegistrar'])->name('Estudiante.xRegistrar');
+Route::get('/actualizar/{id}', [PagesController::class, 'fnEstActualizar'])->name('Estudiante.xActualizar');
+Route::put('/actualizar/{id}', [PagesController::class, 'fnUpdate'])->name('Estudiante.xUpdate');
+Route::delete('/eliminar/{id}', [PagesController::class, 'fnEliminar'])->name('Estudiante.xEliminar');

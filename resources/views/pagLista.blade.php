@@ -28,54 +28,35 @@
             </div>
         @enderror
 
-        @if(true)
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                El <strong>apellido</strong> es requerido 
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        @error('apeEst')
+            <div class="alert alert-danger">
+                El apellido es requerido 
             </div>
-        @endif
+        @enderror
 
-        @if(true)
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                El <strong>apellido</strong> es requerido 
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        @error('fnaEst')
+            <div class="alert alert-danger">
+                La fecha es requerido 
             </div>
-        @endif
+        @enderror
 
-        @if(true)
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                El <strong>Fecha de nacimiento</strong> es requerido 
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        @error('turMat')
+            <div class="alert alert-danger">
+                El turno es requerido 
             </div>
-        @endif
+        @enderror
 
-        @if(true)
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                El <strong>Turno</strong> es requerido 
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        @error('semMat')
+            <div class="alert alert-danger">
+                El semestre es requerido 
             </div>
-        @endif
+        @enderror
 
-        @if(true)
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                El <strong>Turno</strong> es requerido 
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        @error('estMat')
+            <div class="alert alert-danger">
+                El estado es requerido 
             </div>
-        @endif
-
-        @if(true)
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                El <strong>Semestre</strong> es requerido 
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-
-        @if(true)
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                El <strong>Estado</strong> es requerido 
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
+        @enderror
 
         <input type="text" name="codEst" placeholder="Código" value="{{ old('codEst')}}" class="form-control mb-1">
         <input type="text" name="nomEst" placeholder="Nombres" value="{{ old('nomEst')}}" class="form-control mb-1">
@@ -126,15 +107,13 @@
                     </a>
                 </td>
                 <td>
-                    <form action="" method="post" class="d-inline">
+                    <form action="{{ route('Estudiante.xEliminar', $item->id) }}" method="post" class="d-inline">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-danger btn-sm">
-                            x
-                        </button>
+                        <button type="submit" class="btn btn-danger btn-sm">x</button>
                     </form>
-                    ...
-                    <a class="btn btn-warning btn-sm" href="">
+                    
+                    <a class="btn btn-warning btn-sm" href="{{ route('Estudiante.xActualizar', $item->id) }}">
                     A
                     </a>
                 </td>
