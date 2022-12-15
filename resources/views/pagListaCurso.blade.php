@@ -16,6 +16,35 @@
     <form action="{{ route ('Curso.xRegistar') }} " method="post" class="d-grid gap-2">
         @csrf
         
+        @error('denCur')
+            <div class="alert alert-danger">
+                El código es requerido
+            </div>
+        @enderror
+
+        @error('creCur')
+            <div class="alert alert-danger">
+                El nombre es requerido 
+            </div>
+        @enderror
+
+        @error('plaCur')
+            <div class="alert alert-danger">
+                El apellido es requerido 
+            </div>
+        @enderror
+
+        @error('tipCur')
+            <div class="alert alert-danger">
+                La fecha es requerido 
+            </div>
+        @enderror
+
+        @error('estCur')
+            <div class="alert alert-danger">
+                El turno es requerido 
+            </div>
+        @enderror
         <input type="text" name="denCur" placeholder="Denominacion del curso" value="{{ old('denCur')}}" class="form-control mb-1">
         <select name="hrsCur" class="form-control mb-1">
             <option value="">Horas del curso...</option>
