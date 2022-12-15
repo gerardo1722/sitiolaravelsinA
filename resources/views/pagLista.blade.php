@@ -21,6 +21,7 @@
                 El código es requerido
             </div>
         @enderror
+        
 
         @error('nomEst')
             <div class="alert alert-danger">

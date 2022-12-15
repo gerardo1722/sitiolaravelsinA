@@ -13,7 +13,7 @@
 
     <div class="btn btn-success d-grid fs-5 mb-2">Registrar nuevo seguimiento...</div>
 
-    <form action=" {{ route ('Estudiante.xUpdate' ,$xActAlumnos -> id)}}" method="post" class="d-grid gap-2">
+    <form action=" {{ route ('Curso.xUpdate' ,$xActAlumnos -> id)}}" method="post" class="d-grid gap-2">
         @method('PUT')
         @csrf
 

@@ -11,6 +11,7 @@
         <a href="{{ route('xIndex') }}" class="btn btn-primary" >Inicio</a>
         <a href="{{ route('xGaleria') }}" class="btn btn-primary" >Galeria</a>
         <a href="{{ route('xLista') }}" class="btn btn-primary" >Lista</a>
+        <a href="{{ route('xListaCurso') }}" class="btn btn-primary" >Curso</a>
     </div>
 
     <div class="container my-5">
@@ -19,7 +20,6 @@
 
     <div class="container my-5">
         @yield('Cuerpo')
-    </div>
 
     <div class="container bg-dark text-while text-center">
         Pie de pagina
